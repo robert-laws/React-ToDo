@@ -4,7 +4,7 @@ var TodoApp = React.createClass({
   render: function () {
     return (
       <div>
-        TodoApp.jsx
+        
       </div>
     )
   }

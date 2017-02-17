@@ -7,6 +7,10 @@
     "test": "karma start",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robert-laws/React-ToDo.git"
+  },
   "author": "Robert Laws",
   "license": "MIT",
   "dependencies": {
