@@ -11,8 +11,8 @@ module.exports = {
     jquery: 'jQuery'
   },
   output: {
-    path: './public',
-    filename: 'bundle.js'
+    path: __dirname,
+    filename: './public/bundle.js'
   },
   devServer: {
 		inline: true,
