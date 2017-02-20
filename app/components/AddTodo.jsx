@@ -13,7 +13,7 @@ var AddTodo = React.createClass({
   },
   render: function() {
     return (
-      <div className="row">
+      <div className="container__footer">
         <form ref="form" onSubmit={this.onSumbit}>
           <input type="text" ref="todoText" placeholder="To do item?" />
           <button className="button expanded">Add To Do Item</button>
