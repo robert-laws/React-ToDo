@@ -16,7 +16,6 @@ module.exports = {
     } catch (e) {
       // do nothing
     }
-
     return $.isArray(todos) ? todos : [];
   },
   filterTodos: function(todos, showCompleted, searchText) {

@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: [
@@ -51,7 +52,7 @@ module.exports = {
       path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
-  devtool: 'cheap-module-eval-source-map',
+  //devtool: 'cheap-module-eval-source-map',
   plugins: [
 		new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
