@@ -8,6 +8,8 @@ var actions = require('actions');
 var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
 
+import './../experiments/firebase/index.js';
+
 store.subscribe(() => {
   var state = store.getState();
   console.log('get new state', state);
