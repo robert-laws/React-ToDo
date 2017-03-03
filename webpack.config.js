@@ -15,6 +15,7 @@ module.exports = {
     path: './public',
     filename: 'bundle.js'
   },
+  // devtool: 'cheap-module-eval-source-map', // makes bundles.js file very large in production
   devServer: {
 		inline: true,
 		contentBase: './public',
@@ -28,6 +29,7 @@ module.exports = {
       './app/api'
     ],
     alias: {
+      app: 'app',
       applicationStyles: 'app/styles/app.scss',
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
@@ -52,7 +54,6 @@ module.exports = {
       path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
-  //devtool: 'cheap-module-eval-source-map',
   plugins: [
 		new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
