@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
-var isProduction = process.env.NODE_ENV === 'production';
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
   entry: [
@@ -15,7 +16,7 @@ module.exports = {
     path: './public',
     filename: 'bundle.js'
   },
-  // devtool: 'cheap-module-eval-source-map', // makes bundles.js file very large in production
+  devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map',
   devServer: {
 		inline: true,
 		contentBase: './public',
@@ -57,12 +58,12 @@ module.exports = {
   plugins: [
 		new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false,
-        },
-        output: {
-            comments: false,
-        }
+      compress: {
+          warnings: false,
+      },
+      output: {
+          comments: false,
+      }
     }),
     new webpack.ProvidePlugin({
       '$': 'jquery',
