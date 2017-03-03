@@ -17,3 +17,9 @@ app.use(express.static('public'));
 app.listen(PORT, function () {
   console.log('Express server is up on port ' + PORT);
 });
+
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
